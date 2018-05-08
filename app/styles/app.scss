@@ -1,0 +1,33 @@
+@import "bootstrap";
+
+body {
+  background-color: grey;
+}
+
+.display-box{
+  display: flex;
+  justify-content: space-around;
+
+}
+.text-entry, .leaflet-container  {
+  float: left;
+  width: 49%;
+}
+
+.map-box{
+
+}
+
+.text-entry {
+  background-color: white;
+  height: 750px;
+  width: 450px;
+  border: 1px solid black;
+
+}
+.leaflet-container{
+  height: 750px;
+  width: 750px;
+  border: 1px solid black;
+
+}

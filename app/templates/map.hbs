@@ -1,0 +1,27 @@
+<div class="display-box">
+  <div class="text-entry">
+    Test Value: My Home
+    <br>
+    {{input type="text" value=locGive class="form-control" placeholder="Please Enter Location Name." autofocus="autofocus"}}
+    <br>
+    Test Value: 37.970458
+    <br>
+    {{input type="text" value=latitude class="form-control" placeholder="Please Enter Latitude."}}
+    <br>
+    Test Value: -121.722552
+    <br>
+    {{input type="text" value=longitude class="form-control" placeholder="Please Enter Longitude."}}
+    <br>
+    <button class="btn btn-primary btn-lg btn-block" {{action 'updateMap'}}>Update Map</button>
+  </div>
+  {{#leaflet-map lat=lat lng=lng zoom=zoom}}
+    {{tile-layer url="http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"}}
+    {{#if updateCheck}}
+      {{#marker-layer location=locCoordinates}}
+        {{#popup-layer}}
+          {{locName}}
+        {{/popup-layer}}
+      {{/marker-layer}}
+    {{/if}}
+  {{/leaflet-map}}
+</div>
